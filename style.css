@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  background: #121213;
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+header {
+  color: rgb(250, 250, 250);
+  padding: 15px;
+  text-align: center;
+  border-bottom: 2px solid rgb(255, 255, 255);
+  width: 50vw;
+  display: block;
+  margin: 0 auto;
+}
+
+.info-bar {
+  visibility: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.show {
+  visibility: visible;
+}
+
+.spiral {
+  font-size: 50px;
+  animation: spin 1.5s linear infinite;
+}
+
+.box{
+  font-family: 'Montserrat', sans-serif;
+  box-sizing: border-box;
+  /* max-width: 295px; */
+  /* width: 100%;
+  margin: 10px auto; */
+  display: grid;
+  justify-content: center;
+  grid-template-columns:repeat(5,63px);
+  grid-template-rows: repeat(6,63px);
+  row-gap: 10px;
+  column-gap: 5px;
+}
+
+.box-letter{
+  font-family: 'Montserrat', sans-serif;
+  color: rgb(255, 255, 255);
+  box-sizing: border-box;
+  font-size: 35px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: 3px solid #404040;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.correct {
+  background-color: #6aaa64;
+  color: white;
+}
+
+.close {
+  background-color: #c9b458;
+  color: white;
+}
+
+.wrong {
+  background-color: #888;
+  color: white; 
+}
+
+.invalid {
+  animation: flash 1s;
+}
+
+/* Animaciones */
+@keyframes arcoiris {
+
+  100%,
+  0% {
+    color: rgb(255, 0, 0);
+  }
+
+  8% {
+    color: rgb(255, 127, 0);
+  }
+
+  16% {
+    color: rgb(255, 255, 0);
+  }
+
+  25% {
+    color: rgb(127, 255, 0);
+  }
+
+  33% {
+    color: rgb(0, 255, 0);
+  }
+
+  41% {
+    color: rgb(0, 255, 127);
+  }
+
+  50% {
+    color: rgb(0, 255, 255);
+  }
+
+  58% {
+    color: rgb(0, 127, 255);
+  }
+
+  66% {
+    color: rgb(0, 0, 255);
+  }
+
+  75% {
+    color: rgb(127, 0, 255);
+  }
+
+  83% {
+    color: rgb(255, 0, 255);
+  }
+
+  91% {
+    color: rgb(255, 0, 127);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes flash{
+  5%{
+    border-color: crimson;
+  }
+  100%{
+    border-color: white;
+  }
+}
+.winner {
+  animation: arcoiris 6s infinite linear;
+}
